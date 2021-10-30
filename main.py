@@ -1,5 +1,6 @@
 # 파이썬의 기본 내장 함수가 아닌 다른 함수 혹은 다른 기능이 필요할 때 사용함
 import discord, asyncio
+import os
 
 client = discord.Client()
 
@@ -31,4 +32,5 @@ async def on_message(message):
         await message.channel.send ("{} | {}, 힘을 내요!!".format(message.author, message.author.mention))
 
 # 봇을 실행시키기 위한 토큰을 작성해주는 곳
-client.run('OTAzODY2NzE4ODE5MDg2Mzg2.YXzNeg.E_0i8sWwgX89Fzo-RvYzW8DG3ts')
+access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)
